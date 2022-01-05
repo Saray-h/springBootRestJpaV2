@@ -7,8 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "EMPLOYEE")
+@Data @AllArgsConstructor @NoArgsConstructor
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,49 +24,4 @@ public class Employee {
 	private Integer salary;
 	@Column
 	private String departement;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Integer getSalary() {
-		return salary;
-	}
-
-	public void setSalary(Integer salary) {
-		this.salary = salary;
-	}
-
-	public String getDepartement() {
-		return departement;
-	}
-
-	public void setDepartement(String departement) {
-		this.departement = departement;
-	}
-
-	public Employee(Long id, String name, Integer salary, String departement) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
-		this.departement = departement;
-	}
-
-	public Employee() {
-
-	}
-
 }
